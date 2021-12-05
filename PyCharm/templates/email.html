@@ -1,0 +1,32 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Email Successfully Sent {% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+    <p>{% blocktrans %}You're receiving this email because you recently registered your email to our website.{% endblocktrans %}</p>
+
+{% trans "Your submitted details are as follow" %}
+
+{% endblock text_body %}
+
+{% block html_body %}
+{% blocktrans %}
+<p>hello {{ fullname }}</p>{% endblocktrans %}
+    <p>{% blocktrans %}You're receiving this email because you recently registered your email to our website.{% endblocktrans %}</p>
+
+    <img src="{{ host }}{{ image.url }}" alt="Image">
+
+
+<p>{% trans "Thanks for using our site!" %}</p>
+
+{% endblock html_body %}
+
+<style>
+img {
+  display: block;
+  margin-left: 30%;
+  margin-right: auto;
+}
+</style>
