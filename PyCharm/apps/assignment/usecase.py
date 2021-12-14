@@ -15,8 +15,6 @@ class AddMailUseCase:
     def _factory(self):
         self._mail = Mail(**self.data)
         self._mail.save()
-        # print(self._mail.image.file)
-        # print(self.request.META['HTTP_HOST'])
 
         SendEmail(
             context={
